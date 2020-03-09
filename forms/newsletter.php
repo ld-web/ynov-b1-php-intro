@@ -1,5 +1,5 @@
 <div style="margin-top: 2em;">
-  <form action="newsletter.php">
+  <form>
     <label for="email">Enregistrez votre adresse email dans notre newsletter :</label>
     <br />
     <input required type="email" name="email" id="email" placeholder="Email..." />

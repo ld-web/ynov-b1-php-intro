@@ -1,5 +1,6 @@
 <div style="margin-top: 2em;">
-  <form action="contact.php" method="post">
+  <!-- Attribut action absent => cible par défaut = la même page -->
+  <form method="post">
     <input type="text" name="lastName" id="lastName" placeholder="Nom...">
     <input type="text" name="firstName" id="firstName" placeholder="Prénom...">
     <input type="email" name="email" id="email" placeholder="Email...">
