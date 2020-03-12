@@ -52,8 +52,10 @@ if (!empty($_POST)) {
   $stmt = $pdo->query($query);
 
   if (!$stmt) {
-    echo "Une erreur est survenue lors de l'enregistrement de l'utilisateur";
-    var_dump($pdo->errorInfo());
+    // Je collecte l'erreur
+    $err = $pdo->errorInfo();
+    // J'affiche le message contenu dans l'erreur
+    echo "Une erreur est survenue lors de l'enregistrement de l'utilisateur : " . $err[2];
   } else {
     echo "Utilisateur enregistré";
   }
