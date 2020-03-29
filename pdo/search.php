@@ -1,5 +1,7 @@
 <?php
 
+require_once 'constants.php';
+
 try { // Dans ce bloc, tout code pouvant lancer une exception
   $pdo = new PDO(
     "mysql:host=localhost;dbname=ynov_b1_pdo",
@@ -37,5 +39,14 @@ if (isset($_GET['s'])) {
 
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  var_dump($results);
+  foreach ($results as $user) { ?>
+    <div>
+      <h1><?php echo $user['name']; ?></h1>
+      <?php if ($user['profilePic'] !== null) { ?>
+        <img src="<?php echo USER_IMG_DIR . $user['profilePic']; ?>" style="max-width: 120px;" />
+      <?php } else { ?>
+        <p>Pas de photo de profil enregistrée</p>
+      <?php } ?>
+    </div>
+  <?php }
 }
